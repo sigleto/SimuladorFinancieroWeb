@@ -1,0 +1,89 @@
+/* Contenedor principal de las pantallas */
+.container {
+    flex-grow: 1;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fffbde;
+  }
+  
+  /* Fila para las entradas y selectores */
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Contenedor para los inputs y pickers */
+  .pickerContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Contenedor de los inputs */
+  .inputContainer {
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  /* Estilo común para los inputs */
+  .input {
+    flex: 1;
+    margin-left: 6px;
+    border: 2px solid #555ff7;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 18px;
+    width: 45%;
+  }
+  
+  /* Estilo común para los pickers */
+  .picker {
+    height: 50px;
+    width: 45%;
+    color: #02009c;
+    font-weight: 200;
+    border-radius: 10px;
+    padding: 5px 0;
+  }
+  
+  /* Botón para realizar la acción */
+  .touchableButton {
+    margin: 10px 0;
+    background-color: #555ff7;
+    padding: 0 110px;
+    margin-top: 5px;
+    width: 95%;
+    border-radius: 10px;
+  }
+  
+  /* Texto dentro del botón */
+  .buttonText {
+    font-size: 25px;
+    color: #f4f8f8;
+    text-align: center;
+  }
+  
+  /* Estilos de las etiquetas */
+  .label {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: olive;
+  }
+  
+  /* Estilo específico para el título de la calculadora de inversiones */
+  .labelA {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: black;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Resaltado para el Picker seleccionado */
+  .pickerSelectedItem {
+    border-bottom: 2px solid #555ff7;
+  }
+  
