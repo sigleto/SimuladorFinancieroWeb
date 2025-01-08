@@ -1,39 +1,35 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa'; // Usamos react-icons para íconos web
-import './Estilos/EstiloHome.css';
+import './Estilos/App.css';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-
-  const openMenu = () => {
-    console.log("Menú abierto");
-    // Aquí puedes implementar el manejo de visibilidad del menú
-  };
 
   const AccesoHerramientas = () => {
     navigate('/herramientas');
   };
 
   return (
-    <div className="container">
-      <FaBars 
-        size={30} 
-        className="menuIcon" 
-        onClick={openMenu} 
-      />
-      <div className="imagenes">
-        <img className="logo" src="/LogoJuan.png" alt="Logo" />
+    <div className="home-container">
+      <div className="content-wrapper">
+        <header className="home-header">
+          <h1 className="main-title">Simuladores Financieros</h1>
+          <p className="subtitle">Optimiza tus finanzas personales</p>
+        </header>
+        <main className="main-content">
+          <p className="description">
+            Explora nuestros simuladores avanzados para préstamos, inversiones, 
+            ahorros, divisas y más. Toma decisiones financieras inteligentes con 
+            nuestras herramientas personalizadas.
+          </p>
+          <button onClick={AccesoHerramientas} className="cta-button">
+            Explorar Simuladores
+          </button>
+        </main>
       </div>
-      <div className="imagenes">
-        <img className="imagen" src="/calculadora.jpg" alt="Calculadora" />
-      </div>
-      <div className="tituloContainer">
-        <h1 className="titulo">¡Optimiza tus finanzas!</h1>
-      </div>
-      <button onClick={AccesoHerramientas} className="buttonText">
-        RECURSOS
-      </button>
+      <footer className="home-footer">
+        <p>&copy; 2025 Finanzas Inteligentes. Diseñado para potenciar tu futuro financiero.</p>
+      </footer>
     </div>
   );
 };

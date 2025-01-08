@@ -1,54 +1,111 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    background-color: #f6f6e2;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.home-header {
+  margin-bottom: 2rem;
+}
+
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.main-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #764ba2;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.home-footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
   }
-  
-  .logo {
-    width: 280px;
-    height: 195px;
+
+  .subtitle {
+    font-size: 1.2rem;
   }
-  
-  .imagen {
-    width: 280px;
-    height: 200px;
-    margin-top: -10px;
+
+  .main-content {
+    padding: 2rem;
   }
-  
-  .tituloContainer {
-    margin-top: 20px;
+
+  .description {
+    font-size: 1rem;
   }
-  
-  .titulo {
-    font-size: 31px;
-    color: #050444;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
   }
-  
-  .imagenes {
-    margin-top: 10px;
-  }
-  
-  .buttonText {
-    font-size: 19px;
-    background-color: #1c06f7;
-    color: white;
-    padding: 10px 30px;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .menuIcon {
-    position: absolute;
-    top: 40px;
-    left: 20px;
-    font-size: 40px;
-    z-index: 1;
-    cursor: pointer;
-  }
-  
+}

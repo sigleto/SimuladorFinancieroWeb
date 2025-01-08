@@ -1,37 +1,80 @@
-.container {
-    padding: 16px;
-    background-color: #f6f6e2;
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4bd122 0%, #1b5525 100%);
+
+
+
+  color: #ffffff;
+}
+
+
+
+
+.herramientas-container {
+  max-width: 1400px; /* Aumentado el ancho máximo */
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.herramientas-titulo {
+  font-size: 2.5rem; /* Título más grande */
+  color: #dae4ee;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.herramientas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Contenedores más anchos */
+  gap: 2.5rem; /* Más espacio entre contenedores */
+}
+
+.herramienta-boton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem; /* Padding más grande */
+  height: 250px; /* Altura fija para todos los contenedores */
+  background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 15px; /* Bordes más redondeados */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.herramienta-boton:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #f1f3f5;
+}
+
+.herramienta-icono {
+  font-size: 4rem; /* Iconos más grandes */
+  margin-bottom: 1rem;
+}
+
+.herramienta-nombre {
+  font-size: 1.2rem; /* Texto más grande */
+  font-weight: 600;
+  color: #343a40;
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .herramientas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
   
-  .tituloOrg {
-    font-size: 24px;
-    margin-bottom: 20px;
-    margin-top: 70px;
-    text-align: center;
-    color: #54722e;
-    text-decoration-line: underline;
+  .herramienta-boton {
+    height: 200px; /* Ajuste para móviles */
   }
-  
-  .organismos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .opcion {
-    background-color: lightblue;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    width: 250px;
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .opcion:hover {
-    background-color: #8cd0ff;
-  }
-  
+}

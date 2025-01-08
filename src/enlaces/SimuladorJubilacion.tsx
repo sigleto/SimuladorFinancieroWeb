@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Estilos/EstiloCalculadoras.css'
+import '../Estilos/EstiloCalculadoras.css';
 
 export default function App() {
   const [edadActual, setEdadActual] = useState<string>('');
@@ -9,7 +9,6 @@ export default function App() {
   const [tasaInteres, setTasaInteres] = useState<string>('');
 
   const navigate = useNavigate();
- 
 
   const calcularJubilacion = () => {
     if (!edadActual || !edadJubilacion || !montoActual || !tasaInteres) {
@@ -24,35 +23,50 @@ export default function App() {
 
   return (
     <div className="container">
-      <h2>Calculadora de Jubilación</h2>
-      
-      <input
-        type="number"
-        placeholder="Edad actual"
-        value={edadActual}
-        onChange={(e) => setEdadActual(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Edad de jubilación"
-        value={edadJubilacion}
-        onChange={(e) => setEdadJubilacion(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Monto actual"
-        value={montoActual}
-        onChange={(e) => setMontoActual(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Tasa de interés anual (%)"
-        value={tasaInteres}
-        onChange={(e) => setTasaInteres(e.target.value)}
-      />
-      <button onClick={calcularJubilacion}>Calcular</button>
+      <h2 className="labelA">Calculadora de Jubilación</h2>
 
-      
+      <div className="inputContainer">
+        <div className="row">
+          <input
+            className="input"
+            type="number"
+            placeholder="Edad actual"
+            value={edadActual}
+            onChange={(e) => setEdadActual(e.target.value)}
+          />
+        </div>
+        <div className="row">
+          <input
+            className="input"
+            type="number"
+            placeholder="Edad de jubilación"
+            value={edadJubilacion}
+            onChange={(e) => setEdadJubilacion(e.target.value)}
+          />
+        </div>
+        <div className="row">
+          <input
+            className="input"
+            type="number"
+            placeholder="Monto actual"
+            value={montoActual}
+            onChange={(e) => setMontoActual(e.target.value)}
+          />
+        </div>
+        <div className="row">
+          <input
+            className="input"
+            type="number"
+            placeholder="Tasa de interés anual (%)"
+            value={tasaInteres}
+            onChange={(e) => setTasaInteres(e.target.value)}
+          />
+        </div>
+      </div>
+
+      <button className="touchableButton" onClick={calcularJubilacion}>
+        <span className="buttonText">Calcular</span>
+      </button>
     </div>
   );
 }

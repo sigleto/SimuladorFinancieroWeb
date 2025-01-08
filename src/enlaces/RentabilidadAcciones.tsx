@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
-
-
 const RentabilidadAcciones: React.FC = () => {
   const [symbol, setSymbol] = useState<string>('');
   const [cantidad, setCantidad] = useState<string>('');
@@ -47,34 +44,49 @@ const RentabilidadAcciones: React.FC = () => {
 
   return (
     <div className="container">
-      <h2>Simulador de Rentabilidad de Acciones</h2>
+      <h2 className="labelA">Simulador de Rentabilidad de Acciones</h2>
 
-      <input
-        type="text"
-        placeholder="Símbolo de la Acción (por ejemplo, AAPL)"
-        value={symbol}
-        onChange={(e) => setSymbol(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Cantidad de Acciones"
-        value={cantidad}
-        onChange={(e) => setCantidad(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Precio de Compra por Acción"
-        value={precioCompra}
-        onChange={(e) => setPrecioCompra(e.target.value)}
-      />
-      
-      <button onClick={calcularRentabilidad}>Calcular Rentabilidad</button>
+      <div className="inputContainer">
+        <div className="row">
+          <input
+            className="input"
+            type="text"
+            placeholder="Símbolo de la Acción (por ejemplo, AAPL)"
+            value={symbol}
+            onChange={(e) => setSymbol(e.target.value)}
+          />
+        </div>
+        <div className="row">
+          <input
+            className="input"
+            type="number"
+            placeholder="Cantidad de Acciones"
+            value={cantidad}
+            onChange={(e) => setCantidad(e.target.value)}
+          />
+        </div>
+        <div className="row">
+          <input
+            className="input"
+            type="number"
+            placeholder="Precio de Compra por Acción"
+            value={precioCompra}
+            onChange={(e) => setPrecioCompra(e.target.value)}
+          />
+        </div>
+      </div>
+
+      <button className="touchableButton" onClick={calcularRentabilidad}>
+        <span className="buttonText">Calcular Rentabilidad</span>
+      </button>
 
       {error && <p className="error">{error}</p>}
       {resultado !== null && <p>La rentabilidad estimada es: {resultado}</p>}
       {cotizacionActual !== null && <p>Cotización actual: {cotizacionActual}</p>}
 
-      <button onClick={volver}>VOLVER</button>
+      <button className="touchableButton" onClick={volver}>
+        <span className="buttonText">VOLVER</span>
+      </button>
     </div>
   );
 };

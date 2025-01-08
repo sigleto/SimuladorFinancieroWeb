@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import PrincipalStack from './Navigation';
-import { FaHome } from 'react-icons/fa';
-import './Estilos/App.css';
+
 
 const App: React.FC = () => {
   return (

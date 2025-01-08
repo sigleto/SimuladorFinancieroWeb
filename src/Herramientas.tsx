@@ -1,34 +1,35 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Usamos el hook de react-router-dom para la navegación
-import './Estilos/EstiloHerramientas.css'; // Estilos en un archivo CSS para la web
+import { useNavigate } from 'react-router-dom';
+import './Estilos/EstiloHerramientas.css';
 
 const Herramientas: React.FC = () => {
-  const navigate = useNavigate(); // Reemplazamos useNavigation por useNavigate para web
+  const navigate = useNavigate();
 
   const navigateToHerramientas = (ruta: string) => {
-    navigate(ruta); // Redirige a la ruta correspondiente
+    navigate(ruta);
   };
 
   const opciones = [
-    { nombre: 'CALCULADORA DE PRÉSTAMOS', ruta: '/prestamo' },
-    { nombre: 'CALCULADORA DE AHORROS', ruta: '/ahorros' },
-    { nombre: 'CALCULADORA DE INVERSIONES', ruta: '/calculadora-inversiones' },
-    { nombre: 'CONVERSOR DE DIVISAS', ruta: '/divisa' },
-    { nombre: 'COTIZACIÓN DE ACCIONES NY', ruta: '/acciones' },
-    { nombre: 'RENDIMIENTO PARA LA JUBILACIÓN', ruta: '/jubilacion' },
+    { nombre: 'Calculadora de Préstamos', ruta: '/prestamo', icono: '💰' },
+    { nombre: 'Calculadora de Ahorros', ruta: '/ahorros', icono: '🏦' },
+    { nombre: 'Calculadora de Inversiones', ruta: '/calculadora-inversiones', icono: '📈' },
+    { nombre: 'Conversor de Divisas', ruta: '/divisa', icono: '💱' },
+    { nombre: 'Cotización de Acciones NY', ruta: '/acciones', icono: '📊' },
+    { nombre: 'Rendimiento para la Jubilación', ruta: '/jubilacion', icono: '👴' },
   ];
 
   return (
-    <div className="container">
-      <h1 className="tituloOrg">Elige la herramienta a utilizar</h1>
-      <div className="organismos">
+    <div className="herramientas-container">
+      <h1 className="herramientas-titulo">Seleccione una Herramienta Financiera</h1>
+      <div className="herramientas-grid">
         {opciones.map((opcion) => (
           <button
             key={opcion.ruta}
-            className="opcion"
-            onClick={() => navigateToHerramientas(opcion.ruta)} // Navegamos a la ruta correspondiente
+            className="herramienta-boton"
+            onClick={() => navigateToHerramientas(opcion.ruta)}
           >
-            {opcion.nombre}
+            <span className="herramienta-icono">{opcion.icono}</span>
+            <span className="herramienta-nombre">{opcion.nombre}</span>
           </button>
         ))}
       </div>

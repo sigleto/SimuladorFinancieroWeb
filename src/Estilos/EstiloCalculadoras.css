@@ -1,89 +1,83 @@
-/* Contenedor principal de las pantallas */
+/* General Container */
 .container {
-    flex-grow: 1;
-    justify-content: center;
-    padding: 20px;
-    background-color: #fffbde;
-  }
-  
-  /* Fila para las entradas y selectores */
-  .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  /* Contenedor para los inputs y pickers */
-  .pickerContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Contenedor de los inputs */
-  .inputContainer {
-    width: 100%;
-    margin-top: 30px;
-  }
-  
-  /* Estilo común para los inputs */
-  .input {
-    flex: 1;
-    margin-left: 6px;
-    border: 2px solid #555ff7;
-    border-radius: 10px;
-    padding: 8px;
-    font-size: 18px;
-    width: 45%;
-  }
-  
-  /* Estilo común para los pickers */
-  .picker {
-    height: 50px;
-    width: 45%;
-    color: #02009c;
-    font-weight: 200;
-    border-radius: 10px;
-    padding: 5px 0;
-  }
-  
-  /* Botón para realizar la acción */
-  .touchableButton {
-    margin: 10px 0;
-    background-color: #555ff7;
-    padding: 0 110px;
-    margin-top: 5px;
-    width: 95%;
-    border-radius: 10px;
-  }
-  
-  /* Texto dentro del botón */
-  .buttonText {
-    font-size: 25px;
-    color: #f4f8f8;
-    text-align: center;
-  }
-  
-  /* Estilos de las etiquetas */
-  .label {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: olive;
-  }
-  
-  /* Estilo específico para el título de la calculadora de inversiones */
-  .labelA {
-    font-weight: bold;
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: black;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  /* Resaltado para el Picker seleccionado */
-  .pickerSelectedItem {
-    border-bottom: 2px solid #555ff7;
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333333;
+}
+
+/* Title Styling */
+.labelA {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* Input Row Styling */
+.inputContainer {
+  margin-bottom: 1.5rem;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #f4f6f9; /* Suave color de fondo */
+  border: 2px solid #7f8c8d; /* Bordes más contrastados */
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  outline: none;
+}
+
+/* Button Styling */
+.touchableButton {
+ 
+  width: 100%;
+  padding: 12px;
+  margin-top: 30px; /* Más espacio hacia abajo */
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  background: #2980b9;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.touchableButton:hover {
+  background: #1f5f8a;
+}
+
+.touchableButton:active {
+  background: #145374;
+}
+
+.buttonText {
+  display: inline-block;
+  margin: 0;
+}
