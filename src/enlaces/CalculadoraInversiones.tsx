@@ -89,7 +89,7 @@ const CalculadoraInversiones = () => {
         <span className="buttonText">Calcular</span>
       </button>
     </div>
-  );
+  ); 
 };
 
 export default CalculadoraInversiones;

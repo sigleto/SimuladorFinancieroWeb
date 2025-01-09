@@ -1,8 +1,5 @@
-// ResultadoInversiones.tsx
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-
-
 
 type RouteState = {
   principal: string;
@@ -30,7 +27,6 @@ export default function ResultadoInversiones() {
   const [totalPagado, setTotalPagado] = useState<string>('');
   const [rendimientoAcumulado, setRendimientoAcumulado] = useState<string>('');
   const [ganancia, setGanancia] = useState<string>('');
-  
 
   const calculateInvestment = () => {
     const principalAmount = parseFloat(principal);
@@ -89,8 +85,7 @@ export default function ResultadoInversiones() {
     const t = parseFloat(time);
     const c = parseFloat(contributions);
 
-    
-    const n = unidadPeriodo === 'años' ? t : t / 12;
+    const n = unidadPeriodo === 'años' ? t : t;
     const periodicRate = tipoInteres === 'anual' ? r / 100 : Math.pow(1 + r / 100, 12) - 1;
 
     let saldoPendiente = p;
@@ -98,9 +93,10 @@ export default function ResultadoInversiones() {
     const data: DataTableEntry[] = [];
 
     for (let i = 1; i <= n; i++) {
-      const interesPeriodo = saldoPendiente * periodicRate;
-      const valorFuturo = saldoPendiente + interesPeriodo + c;
-      const rendimientoPeriodo = valorFuturo - saldoPendiente - c;
+      const interesPeriodo = saldoPendiente * (unidadPeriodo === 'años' ? periodicRate : periodicRate / 12);
+      const contribucionPeriodo = unidadPeriodo === 'años' ? c : c / 12;
+      const valorFuturo = saldoPendiente + interesPeriodo + contribucionPeriodo;
+      const rendimientoPeriodo = valorFuturo - saldoPendiente - contribucionPeriodo;
 
       data.push({
         periodo: i,
@@ -130,7 +126,6 @@ export default function ResultadoInversiones() {
 
   return (
     <div>
-     
       <h2 className="enunciado">Datos introducidos</h2>
       <p className="labelText">Capital: <span className="resultText">{principal}</span></p>
       <p className="labelText">Tasa de Interés: <span className="resultText">{rate}%</span></p>
@@ -143,8 +138,6 @@ export default function ResultadoInversiones() {
 
       <button onClick={AccesoTabla} className="touchableButton">Acceso a Tabla</button>
       <button onClick={volver} className="touchableButtonV">VOLVER</button>
-
-     
     </div>
   );
 }
