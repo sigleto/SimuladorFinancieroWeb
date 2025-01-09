@@ -19,6 +19,7 @@ const CalculadoraAhorros = () => {
 
   return (
     <div className="container">
+       <h2 className="labelA">Calculadora de Ahorros</h2>
       <h2 className="label">Meta de ahorro</h2>
       <input
         className="input"

@@ -116,6 +116,24 @@ body {
   color: #777;
 }
 
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-link {
+  margin: 0 0.5rem;
+  color: #0056b3;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #003580;
+  transform: scale(1.1);
+}
+
 .benefits-list {
   list-style-type: none;
   padding: 0;

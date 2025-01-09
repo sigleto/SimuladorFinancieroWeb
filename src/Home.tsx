@@ -7,6 +7,9 @@ import './Estilos/EstiloHome.css';
 const Home: React.FC = () => {
   const navigate = useNavigate();
 
+  const navigateToPrivacyPolicy = () => navigate('/politica');
+  const navigateToDisclaimer = () => navigate('/descargo');
+
   const handleNavigation = (path: string) => navigate(path);
 
   const fadeIn = {
@@ -15,11 +18,11 @@ const Home: React.FC = () => {
   };
 
   const features = [
-    { icon: <FaCalculator />, text: "Simulador de Préstamos", path: "/calculoPrestamo" },
-    { icon: <FaPiggyBank />, text: "Simulador de Ahorros", path: "/simuladorAhorros" },
-    { icon: <FaChartLine />, text: "Simulador de Inversiones", path: "/simuladorInversiones" },
-    { icon: <FaExchangeAlt />, text: "Conversor de Divisas", path: "/conversorDivisas" },
-    { icon: <FaChartBar />, text: "Cotizador de Acciones NY", path: "/cotizadorAcciones" },
+    { icon: <FaCalculator />, text: "Simulador de Préstamos", path: "/prestamo" },
+    { icon: <FaPiggyBank />, text: "Simulador de Ahorros", path: "/ahorros" },
+    { icon: <FaChartLine />, text: "Simulador de Inversiones", path: "/calculadora-inversiones" },
+    { icon: <FaExchangeAlt />, text: "Conversor de Divisas", path: "/divisa" },
+    { icon: <FaChartBar />, text: "Cotizador de Acciones NY", path: "/acciones" },
     { icon: <FaUserClock />, text: "Simulador de Jubilación", path: "/jubilacion" }
   ];
 
@@ -100,8 +103,27 @@ const Home: React.FC = () => {
       </main>
 
       <footer className="home-footer">
-        <p>&copy; 2025 Finanzas Inteligentes. Diseñado para potenciar tu futuro financiero.</p>
-      </footer>
+  <p>&copy; 2025 Finanzas Inteligentes. Diseñado para potenciar tu futuro financiero.</p>
+  <div className="footer-links">
+    <motion.span 
+      onClick={navigateToPrivacyPolicy}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="footer-link"
+    >
+      Política de Privacidad
+    </motion.span>
+    <motion.span 
+      onClick={navigateToDisclaimer}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="footer-link"
+    >
+      Descargo de Responsabilidad
+    </motion.span>
+  </div>
+</footer>
+
     </motion.div>
   );
 };

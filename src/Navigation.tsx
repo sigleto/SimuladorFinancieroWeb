@@ -17,6 +17,8 @@ import ResultadoJubilacion from './Anexos/ResultadoJubilación';
 import ResultadoInversiones from './Anexos/ResultadoInversiones';
 import ResultadoAhorro from './Anexos/ResultadoAhorro';
 import TablaInversion from './Anexos/TablaInversion';
+import DescargoResponsabilidad from './Anexos/DescargoResponsabilidad';
+import PoliticaPrivacidad from './Anexos/PoliticaPrivacidad';
 
 const PrincipalStack: React.FC = () => {
   return (
@@ -36,6 +38,8 @@ const PrincipalStack: React.FC = () => {
       <Route path="/resultado-inversiones" element={<ResultadoInversiones />} />
       <Route path="/resultado-ahorro" element={<ResultadoAhorro />} />
       <Route path="/tabla-inversion" element={<TablaInversion />} />
+      <Route path="/politica" element={<PoliticaPrivacidad />} />
+      <Route path="/descargo" element={<DescargoResponsabilidad/>} />
     </Routes>
   );
 };
