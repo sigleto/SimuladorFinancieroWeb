@@ -1,5 +1,5 @@
 // ResultadoInversiones.tsx
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 
@@ -89,7 +89,7 @@ export default function ResultadoInversiones() {
     const t = parseFloat(time);
     const c = parseFloat(contributions);
 
-    const periodo = unidadPeriodo === 'años' ? 12 : 1;
+    
     const n = unidadPeriodo === 'años' ? t : t / 12;
     const periodicRate = tipoInteres === 'anual' ? r / 100 : Math.pow(1 + r / 100, 12) - 1;
 
