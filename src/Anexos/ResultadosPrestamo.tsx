@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import '../Estilos/EstiloResultados.css'
 
 
 interface RouteParams {
@@ -77,24 +78,25 @@ const ResultadosPrestamo: React.FC = () => {
     navigate("/tabla", { state: { data } });
   };
 
-  const volver = () => navigate("/home");
-
+  const volver = () => navigate("/Herramientas");
   return (
-    <div>
+    <div className="container">
       <h2 className="enunciado">Datos introducidos</h2>
-      <p className="labelText">Capital: <span className="resultText">{capital}</span></p>
+      <p className="labelText">Capital: <span className="resultText">{capital} €</span></p>
       <p className="labelText">Tasa de Interés: <span className="resultText">{tasaInteres}%</span></p>
       <p className="labelText">Período: <span className="resultText">{periodo} meses</span></p>
-
+  
       <h2 className="enunciado">Resultados</h2>
-      <p className="labelText">Cuota Mensual: <span className="resultTextr">{parseFloat(cuota).toFixed(2)}</span></p>
-      <p className="labelText">Total Pagado de intereses: <span className="resultText">{parseFloat(totalIntereses).toFixed(2)}</span></p>
-      <p className="labelText">Total Pagado al final: <span className="resultText">{parseFloat(totalPagado).toFixed(2)}</span></p>
-
-      <button onClick={AccesoTabla} className="touchableButton">Consultar Tabla</button>
-      <button onClick={volver} className="touchableButtonV">VOLVER</button>
+      <p className="labelText">Cuota Mensual: <span className="resultTextr">{parseFloat(cuota).toFixed(2)} €</span></p>
+      <p className="labelText">Total Pagado de intereses: <span className="resultText">{parseFloat(totalIntereses).toFixed(2)} €</span></p>
+      <p className="labelText">Total Pagado al final: <span className="resultText">{parseFloat(totalPagado).toFixed(2)} €</span></p>
+  
+      <div className="button-container">
+        <button onClick={AccesoTabla} className="touchableButton">Consultar Tabla</button>
+        <button onClick={volver} className="touchableButtonV">Volver</button>
+      </div>
     </div>
   );
-};
+}  
 
 export default ResultadosPrestamo;

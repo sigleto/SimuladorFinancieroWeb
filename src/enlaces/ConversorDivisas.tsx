@@ -100,7 +100,7 @@ const ConversorDivisas: React.FC = () => {
 
   const navigate = useNavigate();
   const volver = () => {
-    navigate('/home');
+    navigate('/');
   };
 
   return (

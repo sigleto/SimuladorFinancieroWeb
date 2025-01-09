@@ -1,25 +1,24 @@
-html, body, #root {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #4bd122 0%, #1b5525 100%);
-
-
-
-  color: #ffffff;
-}
-
-
-
-
+/* Asegúrate de que el contenedor ocupe toda la pantalla */
 .herramientas-container {
-  max-width: 1400px; /* Aumentado el ancho máximo */
-  margin: 0 auto;
-  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ocupa la altura total de la pantalla */
+  padding: 0; /* Elimina padding adicional si no es necesario */
+  margin: 0; /* Elimina cualquier margen adicional */
+  background-color: rgb(105, 105, 189);
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  box-sizing: border-box; /* Incluye padding y border en las dimensiones */
 }
+
+.herramientas-grid {
+  width: 100%; /* Asegura que el grid ocupe todo el ancho disponible */
+  max-width: 1200px; /* Puedes establecer un valor máximo si deseas limitar el ancho */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
 
 .herramientas-titulo {
   font-size: 2.5rem; /* Título más grande */
@@ -29,11 +28,7 @@ html, body, #root {
   font-weight: 600;
 }
 
-.herramientas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Contenedores más anchos */
-  gap: 2.5rem; /* Más espacio entre contenedores */
-}
+
 
 .herramienta-boton {
   display: flex;

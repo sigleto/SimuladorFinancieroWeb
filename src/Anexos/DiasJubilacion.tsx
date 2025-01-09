@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../Estilos/EstiloResultados.css'
 
 
 interface RetirementAge {
@@ -62,8 +62,9 @@ const DiasJubilacion: React.FC = () => {
 
   return (
     <div className="container">
-      <label className="label">Fecha de Nacimiento (DD-MM-YYYY):</label>
+      <h2 className="enunciado">Calculadora de Días hasta la Jubilación</h2>
       
+      <label className="label">Fecha de Nacimiento (DD-MM-YYYY):</label>
       <input
         type="text"
         className="input"
@@ -109,5 +110,4 @@ const DiasJubilacion: React.FC = () => {
     </div>
   );
 };
-
 export default DiasJubilacion;

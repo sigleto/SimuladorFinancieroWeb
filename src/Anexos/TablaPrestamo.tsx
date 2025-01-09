@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import '../Estilos/EstiloTablaPrestamo.css'
 
 
 type Item = {
@@ -25,29 +25,35 @@ export default function TablaAmortizacion() {
   };
 
   return (
-    <div className="tabla-container">
-     
-      <button onClick={volver} className="tabla-button">
-        VOLVER
+    <div className="container">
+      <h2 className="enunciado">Tabla de Amortización</h2>
+      <div className="tabla-container">
+        <table className="tabla-amortizacion">
+          <thead>
+            <tr>
+              <th>Periodo</th>
+              <th>Cuota</th>
+              <th>Interés</th>
+              <th>Amortización</th>
+              <th>Saldo Pendiente</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.periodo.toString()}>
+                <td>{item.periodo}</td>
+                <td>{item.cuota}</td>
+                <td>{item.interes}</td>
+                <td>{item.amortizacion}</td>
+                <td>{item.saldoPendiente}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <button onClick={volver} className="touchableButton">
+        Volver
       </button>
-      <div className="tabla-header">
-        <span className="tabla-column-header">Periodo</span>
-        <span className="tabla-column-header">Cuota</span>
-        <span className="tabla-column-header">Interés</span>
-        <span className="tabla-column-header">Amortización</span>
-        <span className="tabla-column-header">Sdo. Pendiente</span>
-      </div>
-      <div className="tabla-list">
-        {data.map((item) => (
-          <div className="tabla-row" key={item.periodo.toString()}>
-            <span className="tabla-column">{item.periodo}</span>
-            <span className="tabla-column">{item.cuota}</span>
-            <span className="tabla-column">{item.interes}</span>
-            <span className="tabla-column">{item.amortizacion}</span>
-            <span className="tabla-column">{item.saldoPendiente}</span>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }

@@ -1,7 +1,6 @@
-import React from "react";
+
 import { useNavigate, useLocation } from "react-router-dom";
-
-
+import '../Estilos/EstiloTablaInversion.css';
 
 type TablaInversionProps = {
   data: {
@@ -22,26 +21,32 @@ export default function TablaInversion() {
   };
 
   return (
-    <div className="tabla-container">
-      
-      <div className="tabla-header">
-        <span className="tabla-column-header">Periodo (Años)</span>
-        <span className="tabla-column-header">Saldo</span>
-        <span className="tabla-column-header">Rendimiento Periodo</span>
-        <span className="tabla-column-header">Rendimiento Acumulado</span>
+    <div className="container">
+      <h2 className="enunciado">Tabla de Inversión</h2>
+      <div className="tabla-container">
+        <table className="tabla-inversion">
+          <thead>
+            <tr>
+              <th>Periodo (Años)</th>
+              <th>Saldo</th>
+              <th>Rendimiento Periodo</th>
+              <th>Rendimiento Acumulado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.periodo.toString()}>
+                <td>{item.periodo}</td>
+                <td>{item.saldo}</td>
+                <td>{item.rendimientoPeriodo}</td>
+                <td>{item.rendimientoAcumulado}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <div className="tabla-list">
-        {data.map((item) => (
-          <div className="tabla-row" key={item.periodo.toString()}>
-            <span className="tabla-column">{item.periodo}</span>
-            <span className="tabla-column">{item.saldo}</span>
-            <span className="tabla-column">{item.rendimientoPeriodo}</span>
-            <span className="tabla-column">{item.rendimientoAcumulado}</span>
-          </div>
-        ))}
-      </div>
-      <button onClick={volver} className="tabla-button">
-        VOLVER
+      <button onClick={volver} className="touchableButton">
+        Volver
       </button>
     </div>
   );
