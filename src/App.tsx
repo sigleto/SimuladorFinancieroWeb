@@ -22,7 +22,7 @@ const App: React.FC = () => {
     const ogTags = [
       { property: 'og:title', content: 'Simuladores Financieros' },
       { property: 'og:description', content: 'Optimiza tus finanzas con nuestros simuladores avanzados.' },
-      { property: 'og:image', content: '/path/to/your/logo.png' }
+      { property: 'og:image', content: '/logo.png' }
     ];
 
     ogTags.forEach(tag => {
